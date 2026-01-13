@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Biology Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dna"></i>
+                <span>Custom Biology Analysis</span>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Back to Main</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Title Section -->
+        <section class="hero">
+            <h1>Custom Exam Analysis</h1>
+            <p class="subtitle">Enter your incorrect questions to get personalized mastery analysis</p>
+        </section>
+
+        <!-- Input Section -->
+        <section class="section">
+            <h2><i class="fas fa-edit"></i> Enter Your Incorrect Questions</h2>
+            
+            <div class="input-section">
+                <!-- Method 1: Quick Input -->
+                <div class="input-method">
+                    <h3>Method 1: Quick Input</h3>
+                    <p>Enter question numbers separated by commas (e.g., 1,5,12,20,33,40)</p>
+                    <div class="input-group">
+                        <label for="quick-input">MCQ Questions (1-40):</label>
+                        <input type="text" id="quick-input" placeholder="Example: 1,5,12,20,33,40">
+                    </div>
+                    <div class="input-group">
+                        <label for="frq-input">FRQ Questions (1-12):</label>
+                        <input type="text" id="frq-input" placeholder="Example: 2,5,9">
+                    </div>
+                </div>
+
+                <!-- Method 2: Topic-wise Input -->
+                <div class="input-method">
+                    <h3>Method 2: Topic-wise Input</h3>
+                    <p>Select which questions you got wrong in each topic</p>
+                    
+                    <div class="topic-selection">
+                        <!-- Topic 1 -->
+                        <div class="topic-questions">
+                            <h4>Topic 1: Characteristics of Living Organisms</h4>
+                            <p>Questions: 1-6, FRQ 2</p>
+                            <div class="question-grid">
+                                <label><input type="checkbox" data-topic="1" data-type="mcq" value="1"> Q1</label>
+                                <label><input type="checkbox" data-topic="1" data-type="mcq" value="2"> Q2</label>
+                                <label><input type="checkbox" data-topic="1" data-type="mcq" value="3"> Q3</label>
+                                <label><input type="checkbox" data-topic="1" data-type="mcq" value="4"> Q4</label>
+                                <label><input type="checkbox" data-topic="1" data-type="mcq" value="5"> Q5</label>
+                                <label><input type="checkbox" data-topic="1" data-type="mcq" value="6"> Q6</label>
+                                <label><input type="checkbox" data-topic="1" data-type="frq" value="2"> FRQ2</label>
+                            </div>
+                        </div>
+
+                        <!-- Topic 2 -->
+                        <div class="topic-questions">
+                            <h4>Topic 2: Cell Structure</h4>
+                            <p>Questions: 7-19, FRQ 3,4,5,8</p>
+                            <div class="question-grid">
+                                <!-- Generate checkboxes for questions 7-19 -->
+                                <script>
+                                    for(let i = 7; i <= 19; i++) {
+                                        document.write(`<label><input type="checkbox" data-topic="2" data-type="mcq" value="${i}"> Q${i}</label>`);
+                                    }
+                                </script>
+                                <label><input type="checkbox" data-topic="2" data-type="frq" value="3"> FRQ3</label>
+                                <label><input type="checkbox" data-topic="2" data-type="frq" value="4"> FRQ4</label>
+                                <label><input type="checkbox" data-topic="2" data-type="frq" value="5"> FRQ5</label>
+                                <label><input type="checkbox" data-topic="2" data-type="frq" value="8"> FRQ8</label>
+                            </div>
+                        </div>
+
+                        <!-- Topic 3 -->
+                        <div class="topic-questions">
+                            <h4>Topic 3: Movement of Substances</h4>
+                            <p>Questions: 20-26, FRQ 6,7</p>
+                            <div class="question-grid">
+                                <script>
+                                    for(let i = 20; i <= 26; i++) {
+                                        document.write(`<label><input type="checkbox" data-topic="3" data-type="mcq" value="${i}"> Q${i}</label>`);
+                                    }
+                                </script>
+                                <label><input type="checkbox" data-topic="3" data-type="frq" value="6"> FRQ6</label>
+                                <label><input type="checkbox" data-topic="3" data-type="frq" value="7"> FRQ7</label>
+                            </div>
+                        </div>
+
+                        <!-- Topic 4 -->
+                        <div class="topic-questions">
+                            <h4>Topic 4: Biological Molecules & Food Tests</h4>
+                            <p>Questions: 27-34, FRQ 9</p>
+                            <div class="question-grid">
+                                <script>
+                                    for(let i = 27; i <= 34; i++) {
+                                        document.write(`<label><input type="checkbox" data-topic="4" data-type="mcq" value="${i}"> Q${i}</label>`);
+                                    }
+                                </script>
+                                <label><input type="checkbox" data-topic="4" data-type="frq" value="9"> FRQ9</label>
+                            </div>
+                        </div>
+
+                        <!-- Topic 5 -->
+                        <div class="topic-questions">
+                            <h4>Topic 5: Enzymes</h4>
+                            <p>Questions: 35-40, FRQ 10,11,12</p>
+                            <div class="question-grid">
+                                <script>
+                                    for(let i = 35; i <= 40; i++) {
+                                        document.write(`<label><input type="checkbox" data-topic="5" data-type="mcq" value="${i}"> Q${i}</label>`);
+                                    }
+                                </script>
+                                <label><input type="checkbox" data-topic="5" data-type="frq" value="10"> FRQ10</label>
+                                <label><input type="checkbox" data-topic="5" data-type="frq" value="11"> FRQ11</label>
+                                <label><input type="checkbox" data-topic="5" data-type="frq" value="12"> FRQ12</label>
+                            </div>
+                        </div>
+
+                        <!-- Topic 6 -->
+                        <div class="topic-questions">
+                            <h4>Topic 6: Practical & Calculation Skills</h4>
+                            <p>Questions: FRQ 1,4,6</p>
+                            <div class="question-grid">
+                                <label><input type="checkbox" data-topic="6" data-type="frq" value="1"> FRQ1</label>
+                                <label><input type="checkbox" data-topic="6" data-type="frq" value="4"> FRQ4</label>
+                                <label><input type="checkbox" data-topic="6" data-type="frq" value="6"> FRQ6</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button id="calculate-btn" class="btn-primary">
+                        <i class="fas fa-calculator"></i> Calculate My Mastery
+                    </button>
+                    <button id="clear-btn" class="btn-secondary">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                    <button id="example-btn" class="btn-tertiary">
+                        <i class="fas fa-eye"></i> Load Example
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (Initially Hidden) -->
+        <section id="results-section" class="section" style="display: none;">
+            <h2><i class="fas fa-chart-bar"></i> Your Personal Analysis</h2>
+            
+            <!-- Summary -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <i class="fas fa-times-circle"></i>
+                    <div>
+                        <h3>Incorrect Questions</h3>
+                        <p id="incorrect-count">0</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Correct Questions</h3>
+                        <p id="correct-count">52</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <i class="fas fa-percentage"></i>
+                    <div>
+                        <h3>Overall Score</h3>
+                        <p id="overall-score">100%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="chart-container">
+                <div class="chart-card">
+                    <h3>Your Topic Mastery</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="customMasteryChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Weakest Topics</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="weakTopicsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic Analysis -->
+            <div id="custom-topics" class="topic-analysis">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+
+            <!-- Study Recommendations -->
+            <div id="custom-recommendations" class="study-plan">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+
+            <!-- Share Results -->
+            <div class="share-section">
+                <h3><i class="fas fa-share-alt"></i> Save Your Results</h3>
+                <p>Copy this code to save your results and load them later:</p>
+                <div class="share-code">
+                    <input type="text" id="share-code" readonly>
+                    <button id="copy-btn" class="btn-primary">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-dna"></i> Custom Biology Analysis</h4>
+                    <p>Personalized mastery analysis based on your exam performance</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Main Analysis</a>
+                    <a href="#results-section">Your Results</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Custom Biology Analysis | Data is processed locally in your browser</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="custom.js"></script>
+</body>
+</html>
