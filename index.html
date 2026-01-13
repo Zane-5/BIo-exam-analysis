@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Exam Mastery Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-dna"></i>
+                <span>Biology Mastery Analysis</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#topics">Topics Mastery</a>
+                <a href="#recommendations">Study Plan</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Title Section -->
+        <section class="hero">
+            <h1>Biology Exam Mastery Analysis</h1>
+            <p class="subtitle">Based on Tsinglan School Internal Biology Exam (Jan 2026)</p>
+            <div class="exam-info">
+                <div class="info-card">
+                    <i class="fas fa-book"></i>
+                    <div>
+                        <h3>Exam Date</h3>
+                        <p>January 2026</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3>Topics Covered</h3>
+                        <p>6 Main Topics</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-question-circle"></i>
+                    <div>
+                        <h3>Total Questions</h3>
+                        <p>40 MCQs + 7 FRQs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="section">
+            <h2><i class="fas fa-chart-pie"></i> Mastery Overview</h2>
+            <div class="chart-container">
+                <div class="chart-card">
+                    <h3>Topic Mastery Distribution</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="masteryChart"></canvas>
+                    </div>
+                    <p class="chart-note">Percentage of correct answers per topic</p>
+                </div>
+                <div class="chart-card">
+                    <h3>Question Type Performance</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="questionTypeChart"></canvas>
+                    </div>
+                    <p class="chart-note">Comparison between MCQs and FRQs</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topics Mastery Section -->
+        <section id="topics" class="section">
+            <h2><i class="fas fa-layer-group"></i> Topics Mastery Analysis</h2>
+            
+            <div class="topic-analysis">
+                <!-- Topic 1: Characteristics of Living Organisms -->
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <h3>1. Characteristics of Living Organisms</h3>
+                        <span class="mastery-badge">85% Mastery</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Understanding Level</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="topic-details">
+                        <p><strong>Questions Covered:</strong> 1-6, FRQ 2</p>
+                        <p><strong>Key Concepts:</strong> MRS GREN (Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition)</p>
+                        <div class="strengths-weaknesses">
+                            <div class="strength">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Strengths:</strong> Identifying characteristics in different organisms</span>
+                            </div>
+                            <div class="weakness">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span><strong>To Improve:</strong> Distinguishing between similar characteristics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 2: Cell Structure -->
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <h3>2. Cell Structure</h3>
+                        <span class="mastery-badge">78% Mastery</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Understanding Level</span>
+                            <span>78%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%;"></div>
+                        </div>
+                    </div>
+                    <div class="topic-details">
+                        <p><strong>Questions Covered:</strong> 7-19, FRQ 3, 4, 5, 8</p>
+                        <p><strong>Key Concepts:</strong> Plant vs animal cells, specialized cells, microscopy</p>
+                        <div class="strengths-weaknesses">
+                            <div class="strength">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Strengths:</strong> Identifying cell organelles</span>
+                            </div>
+                            <div class="weakness">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span><strong>To Improve:</strong> Understanding specialized cell functions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 3: Movement of Substances -->
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <h3>3. Movement of Substances</h3>
+                        <span class="mastery-badge">72% Mastery</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Understanding Level</span>
+                            <span>72%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 72%;"></div>
+                        </div>
+                    </div>
+                    <div class="topic-details">
+                        <p><strong>Questions Covered:</strong> 20-26, FRQ 6, 7</p>
+                        <p><strong>Key Concepts:</strong> Diffusion, osmosis, active transport, plasmolysis</p>
+                        <div class="strengths-weaknesses">
+                            <div class="strength">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Strengths:</strong> Basic concepts of diffusion</span>
+                            </div>
+                            <div class="weakness">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span><strong>To Improve:</strong> Practical applications and calculations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 4: Biological Molecules -->
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <h3>4. Biological Molecules & Food Tests</h3>
+                        <span class="mastery-badge">80% Mastery</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Understanding Level</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="topic-details">
+                        <p><strong>Questions Covered:</strong> 27-34, FRQ 9</p>
+                        <p><strong>Key Concepts:</strong> Carbohydrates, proteins, lipids, food testing procedures</p>
+                        <div class="strengths-weaknesses">
+                            <div class="strength">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Strengths:</strong> Identifying positive test results</span>
+                            </div>
+                            <div class="weakness">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span><strong>To Improve:</strong> Interpreting complex test results</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 5: Enzymes -->
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <h3>5. Enzymes</h3>
+                        <span class="mastery-badge">88% Mastery</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Understanding Level</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                    <div class="topic-details">
+                        <p><strong>Questions Covered:</strong> 35-40, FRQ 10, 11, 12</p>
+                        <p><strong>Key Concepts:</strong> Enzyme action, temperature/pH effects, denaturation</p>
+                        <div class="strengths-weaknesses">
+                            <div class="strength">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Strengths:</strong> Understanding enzyme properties</span>
+                            </div>
+                            <div class="weakness">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span><strong>To Improve:</strong> Graph interpretation for enzyme activity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 6: Practical Skills -->
+                <div class="topic-card">
+                    <div class="topic-header">
+                        <h3>6. Practical & Calculation Skills</h3>
+                        <span class="mastery-badge">70% Mastery</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Understanding Level</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="topic-details">
+                        <p><strong>Questions Covered:</strong> FRQ 1, 4, 6</p>
+                        <p><strong>Key Concepts:</strong> Graph plotting, magnification calculations, experimental design</p>
+                        <div class="strengths-weaknesses">
+                            <div class="strength">
+                                <i class="fas fa-check-circle"></i>
+                                <span><strong>Strengths:</strong> Basic calculations</span>
+                            </div>
+                            <div class="weakness">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span><strong>To Improve:</strong> Advanced graph interpretation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Plan Section -->
+        <section id="recommendations" class="section">
+            <h2><i class="fas fa-calendar-check"></i> Personalized Study Plan</h2>
+            <div class="study-plan">
+                <div class="plan-card priority-high">
+                    <div class="plan-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>High Priority (Mastery < 75%)</h3>
+                    </div>
+                    <ul>
+                        <li><strong>Topic 3:</strong> Practice osmosis and diffusion calculations daily</li>
+                        <li><strong>Topic 6:</strong> Complete 2 graph interpretation exercises per week</li>
+                        <li>Review experimental procedures from FRQ 6</li>
+                    </ul>
+                </div>
+                
+                <div class="plan-card priority-medium">
+                    <div class="plan-header">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Medium Priority (Mastery 75-85%)</h3>
+                    </div>
+                    <ul>
+                        <li><strong>Topic 2:</strong> Study specialized cell functions weekly</li>
+                        <li><strong>Topic 4:</strong> Review complex food test scenarios</li>
+                        <li>Practice identifying cell structures from diagrams</li>
+                    </ul>
+                </div>
+                
+                <div class="plan-card priority-low">
+                    <div class="plan-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Maintain Strength (Mastery > 85%)</h3>
+                    </div>
+                    <ul>
+                        <li><strong>Topic 1:</strong> Monthly review of MRS GREN concepts</li>
+                        <li><strong>Topic 5:</strong> Challenge with advanced enzyme questions</li>
+                        <li>Help peers understand these topics to reinforce knowledge</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="weekly-schedule">
+                <h3><i class="fas fa-calendar-alt"></i> Suggested Weekly Schedule</h3>
+                <div class="schedule-grid">
+                    <div class="day">
+                        <h4>Monday</h4>
+                        <p>Movement of Substances (30 min)</p>
+                    </div>
+                    <div class="day">
+                        <h4>Tuesday</h4>
+                        <p>Practical Skills (30 min)</p>
+                    </div>
+                    <div class="day">
+                        <h4>Wednesday</h4>
+                        <p>Cell Structure (30 min)</p>
+                    </div>
+                    <div class="day">
+                        <h4>Thursday</h4>
+                        <p>Biological Molecules (30 min)</p>
+                    </div>
+                    <div class="day">
+                        <h4>Friday</h4>
+                        <p>Review Weak Topics (45 min)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-dna"></i> Biology Mastery Analysis</h4>
+                    <p>Based on Tsinglan School Internal Biology Exam</p>
+                    <p>January 2026</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Study Resources</h4>
+                    <a href="#">Biology Revision Notes</a>
+                    <a href="#">Past Exam Papers</a>
+                    <a href="#">Interactive Quizzes</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Note</h4>
+                    <p>This analysis is based on the provided exam and answer key. Mastery percentages are calculated from question coverage in each topic.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Biology Mastery Analysis | For educational purposes only</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
