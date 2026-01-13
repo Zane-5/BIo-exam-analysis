@@ -119,7 +119,7 @@ body {
 
 .exam-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     margin-top: 40px;
 }
@@ -250,12 +250,25 @@ body {
 }
 
 .mastery-badge {
-    background-color: rgba(76, 175, 80, 0.15);
-    color: var(--primary-color);
     padding: 5px 15px;
     border-radius: 20px;
     font-weight: 600;
     font-size: 0.9rem;
+}
+
+.mastery-badge.high {
+    background-color: rgba(76, 175, 80, 0.15);
+    color: var(--success-color);
+}
+
+.mastery-badge.medium {
+    background-color: rgba(255, 152, 0, 0.15);
+    color: var(--warning-color);
+}
+
+.mastery-badge.low {
+    background-color: rgba(244, 67, 54, 0.15);
+    color: var(--danger-color);
 }
 
 .progress-container {
@@ -279,8 +292,19 @@ body {
 .progress-fill {
     height: 100%;
     border-radius: 5px;
-    background-color: var(--primary-color);
     transition: width 1s ease;
+}
+
+.progress-fill.high {
+    background-color: var(--success-color);
+}
+
+.progress-fill.medium {
+    background-color: var(--warning-color);
+}
+
+.progress-fill.low {
+    background-color: var(--danger-color);
 }
 
 .topic-details {
@@ -430,6 +454,55 @@ body {
     color: var(--gray-color);
 }
 
+/* Custom CTA Section */
+.custom-cta {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    margin-top: 40px;
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.cta-content i {
+    font-size: 3.5rem;
+}
+
+.cta-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.cta-content p {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--light-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-dark);
@@ -440,7 +513,7 @@ footer {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
     margin-bottom: 40px;
 }
@@ -506,7 +579,7 @@ footer {
     }
     
     .exam-info {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
     
     .chart-container, .study-plan, .schedule-grid {
@@ -517,5 +590,299 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+    }
+    
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cta-content i {
+        font-size: 2.8rem;
+    }
+}
+
+/* Custom Analysis Page Styles (新增部分) */
+.input-section {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 40px;
+}
+
+.input-method {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.input-method:last-child {
+    border-bottom: none;
+}
+
+.input-method h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.input-method p {
+    color: var(--gray-color);
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+.question-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.question-grid label {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--light-gray);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.question-grid label:hover {
+    background: #e8f5e9;
+}
+
+.question-grid input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+.topic-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.topic-questions {
+    padding: 20px;
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+.topic-questions h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.topic-questions p {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-secondary, .btn-tertiary {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-tertiary {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-tertiary:hover {
+    background-color: #138496;
+    transform: translateY(-2px);
+}
+
+.btn-primary i, .btn-secondary i, .btn-tertiary i {
+    margin-right: 10px;
+}
+
+/* Results Section */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.summary-card {
+    background: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.summary-card i {
+    font-size: 2.5rem;
+    margin-right: 20px;
+}
+
+.summary-card:nth-child(1) i {
+    color: var(--danger-color);
+}
+
+.summary-card:nth-child(2) i {
+    color: var(--success-color);
+}
+
+.summary-card:nth-child(3) i {
+    color: var(--primary-color);
+}
+
+.summary-card h3 {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    margin-bottom: 5px;
+}
+
+.summary-card p {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+/* Share section */
+.share-section {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 40px;
+}
+
+.share-code {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.share-code input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px;
+    color: var(--gray-color);
+    font-style: italic;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 9999;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.notification.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.notification.error {
+    background-color: #F44336;
+    color: white;
+}
+
+.notification.info {
+    background-color: #2196F3;
+    color: white;
+}
+
+/* Responsive adjustments for custom page */
+@media (max-width: 768px) {
+    .question-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-secondary, .btn-tertiary {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .share-code {
+        flex-direction: column;
+    }
+    
+    .input-group input {
+        width: 100%;
     }
 }
